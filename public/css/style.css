@@ -1,0 +1,41 @@
+.form-group img.imgSmall {
+    width: 100px;
+    height: 100px;
+    margin-top: 10px;
+}
+
+.form-group img.imgBig {
+    width: 100px;
+    height: 100px;
+    margin-top: 10px;
+}
+.paginationjs ul  {
+    display: flex;
+  }
+  .paginationjs ul li{
+    list-style: none;
+    width: 50px;
+   line-height: 50px;
+    text-align: center;
+    border: 1px solid pink;
+    cursor: pointer;
+  }
+  .paginationjs ul li.active{
+    color: black;
+    background-color: pink;
+  }
+  .paginationjs ul li a {
+    text-decoration: none;
+    color: black;
+  }
+  div#pagination .paginationjs ul{ 
+    margin: auto;
+    height: 50%;
+    width: 50%;
+    margin-top: 20px;
+}
+
+#table img.a {
+  height: 100px;
+  width: 100px;
+} 

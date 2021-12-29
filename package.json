@@ -1,0 +1,54 @@
+{
+  "name": "vision_recharge",
+  "version": "0.1.0",
+  "private": true,
+  "description": "visionnetwork Nap",
+  "main": "app.js",
+  "scripts": {
+    "start": " nodemon node app",
+    "dev": "nodemon app",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.visionnetwork.vn/Vision_backend/vision_recharge.git"
+  },
+  "keywords": [
+    "visionnetwork",
+    "nap",
+    "recharge"
+  ],
+  "author": "An",
+  "license": "ISC",
+  "dependencies": {
+    "@koa/multer": "^3.0.0",
+    "@koa/router": "^10.1.1",
+    "axios": "^0.24.0",
+    "bcrypt": "^5.0.1",
+    "debug": "^2.6.3",
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "express-ejs-layouts": "^2.5.1",
+    "koa": "^2.13.4",
+    "koa-better-flash": "^0.0.4",
+    "koa-body": "^4.2.0",
+    "koa-bodyparser": "^4.3.0",
+    "koa-ejs": "^4.3.0",
+    "koa-json": "^2.0.2",
+    "koa-mongo": "^1.9.3",
+    "koa-passport": "^4.1.4",
+    "koa-session": "^6.2.0",
+    "koa-static": "^5.0.0",
+    "koa-views": "^7.0.2",
+    "mongoose": "^6.0.12",
+    "multer": "^1.4.4",
+    "passport-facebook": "^3.0.0",
+    "passport-google-oauth2": "^0.2.0",
+    "passport-local": "^1.0.0",
+    "path": "^0.12.7",
+    "pug": "^3.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

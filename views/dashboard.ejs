@@ -1,0 +1,95 @@
+<div class="container ">
+    <h1 class="" style="text-align: center; color: black; text-transform: uppercase; margin-top: 36px;">Dash Board</h1>
+</div>
+<div class="container-xl mt-4">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                
+                <div class="row">
+                    <div class="col-sm-8" >
+                        <a href="/admin/add-game" class="btn btn-primary" ><i class="fas fa-plus-circle"></i> <span>Add New Game</span></a>						
+                    </div>
+                    <div class="col-sm-4">
+                        <form class="form-inline" method="GET" action="/game/search">
+                            <input name="keyword" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success " type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+               
+            </div>
+            <table id="table" class="table table-striped table-hover table-bordered">
+                <thead>  
+                    <tr>
+                        <th>STT</th>
+                        <th>Name Game<i class="fa fa-sort"></i></th>
+                        <th>Img Small</th>
+                        <th>Img Big <i class="fa fa-sort"></i></th>
+                        <th>User<i class="fa fa-sort"></i></th>
+                        <th>Content</th>
+                        <th>Description <i class="fa fa-sort"></i></th>
+                        <th>Actions</th>
+                    </tr>      
+                </thead>
+                <tbody id="tbody">
+                
+                   <% data.forEach(function(val, index) { %>
+                    <tr>
+                        <td><%= index+1 %></td>
+                        <td><%= val.name %></td>
+                        <% if(val.imgSmall.length >  0 ) {%>
+                            <td><img style="width: 100px; height: 100px;" src="<%= val.imgSmall %>" alt=""></td>
+                        <% } else { %>
+                            <td></td>
+                        <% } %>
+                        <% if(val.imgBig.length >  0 ) {%>
+                            <td><img style="width: 100px; height: 100px;" src="<%= val.imgBig %>" alt=""></td>
+                        <% } else { %>
+                            <td></td>
+                        <% } %>
+                        <td><%= (typeof val.userId !== 'undefined' && val.userId.email) ? val.userId.email : '' %></td>
+                        <td><%= val.content %></td>
+                        <td><%= val.desc %></td>
+                        <td>
+                            <a href="/admin/update-game/<%= val._id %>" class="edit" title="Edit" data-toggle="tooltip"><i class="fas fa-edit"></i></a>
+                            <a href="" class="delete" title="Delete" data-toggle="tooltip"><i class="fas fa-trash-alt"></i></a>
+                        </td>
+                    </tr>
+                   <% })  %>
+                </tbody>
+            </table>
+           
+            <div class="clearfix mt-5">
+                <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
+               
+            </div>
+            <div id="pagination"></div>
+            
+        </div>
+    </div>  
+    <div style="margin-left: 20px; margin-bottom: 50px;">
+        <a href="auth/logout" class="btn btn-secondary">Logout</a>
+    </div>
+</div>   
+
+<script>
+    const stateMsg = JSON.parse('<%- JSON.stringify(success) %>');
+    let success = (stateMsg) ? stateMsg : '';
+
+    if(success) {
+        Toastify({
+        text: success,
+        duration: 1500,
+        newWindow: true,
+        close: true,
+        gravity: "bottom", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+            background: "pink",
+        },
+        onClick: function () { } // Callback after click
+    }).showToast();
+    }
+</script>

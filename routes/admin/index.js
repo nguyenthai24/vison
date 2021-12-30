@@ -56,9 +56,12 @@ router.get('/find-game', async (ctx) => {
   await ctx.render('admin/find-game')
 })
 
+// show list image game 
+router.get('/show-list-image', controller.showImg);
 
 //curd game
 router.post('/add-game', cpUpload, controller.create );
+router.post('/add-game-ajax')
 router.post('/update-game', cpUpload, controller.update);
 router.get('/update-game/:id', cpUpload, controller.find);
 router.delete('/detele-game/:id', cpUpload, controller.delete);

@@ -1,4 +1,3 @@
-
 <div class="container">
   <h1 style="text-align: center;">ADD GAME</h1>
   <form action="/admin/add-game" method="POST" enctype="multipart/form-data">
@@ -8,13 +7,13 @@
         placeholder="Enter email">
     </div>
     <div class="form-group">
-      <label  for="exampleFormControlFile1">Image Game Small</label>
-      <input id="imgSmall" name="imgSmall" type="file" class="form-control-file" >
+      <label for="exampleFormControlFile1">Image Game Small</label>
+      <input id="imgSmall" name="imgSmall" type="file" class="form-control-file">
       <img id="Small" />
     </div>
     <div class="form-group">
       <label for="exampleFormControlFile1">Image Game Big</label>
-      <input id="imgBig" name="imgBig" type="file" class="form-control-file" >
+      <input id="imgBig" name="imgBig" type="file" class="form-control-file">
       <img id="Big" />
     </div>
     <div class="form-group">
@@ -26,25 +25,35 @@
       <textarea name="desc" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
     </div>
 
-    <div class="form-check mb-2" >
-      <select class="form-select" aria-label="Default select example" id="frmSelect">
+    <div class="form-check mb-4">
+      <input class="form-check-input" type="radio" name="flexRadioDefault" id="checkRadio" value=true>
+      <label class="form-check-label" for="flexRadioDefault1" style="margin-right: 30px;">
+        TRUE
+      </label>
+      <input class="form-check-input" type="radio" name="flexRadioDefault" id="checkRadio1" value=false>
+      <label class="form-check-label" for="flexRadioDefault1">
+        FALSE
+      </label>
+    </div>
+    <div class="form-check mb-2" style="display: none;" id="showPosition">
+      <select class="form-select" aria-label="Default select example" name="form_select" id="frmSelect" style="margin-left: 10;">
         <option value="0" selected>Select imgage feature</option>
-        <option value="1">imgage big feature</option>
-        <option value="2">imgage small feature</option>
-        <option value="3">imgage small feature</option>
+        <option value="1">Position 1</option>
+        <option value="2">Position 2</option>
+        <option value="3">Position 3</option>
       </select>
     </div>
     <button class="btn btn-primary btn-user btn-block" type="submit" class="btn btn-primary">Register</button>
   </form>
-  
+
 </div>
 
 <script>
   const stateMsg = JSON.parse('<%- JSON.stringify(error) %>');
   let error = (stateMsg) ? stateMsg : '';
 
-  if(error) {
-      Toastify({
+  if (error) {
+    Toastify({
       text: error,
       duration: 1500,
       newWindow: true,
@@ -53,9 +62,9 @@
       position: "right", // `left`, `center` or `right`
       stopOnFocus: true, // Prevents dismissing of toast on hover
       style: {
-          background: "pink",
+        background: "pink",
       },
       onClick: function () { } // Callback after click
-  }).showToast();
+    }).showToast();
   }
 </script>

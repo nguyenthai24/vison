@@ -22,13 +22,22 @@ const gameModel = new Schema({
         type: String
     },
     featured: {
-        type: String,
-        default : 0
+        type: Boolean,
+        default : false
+    },
+    position : {
+        type : Number,
+        enum : [1,2,3],
+        default : null
     },
     createAt: {
         type: Date,
         default: Date.now
-    }
+    },
+    updateAt: {
+        type: Date,
+        default: Date.now
+    },
 })
 
 module.exports = mongoose.model('Games', gameModel)

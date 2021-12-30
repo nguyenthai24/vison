@@ -8,7 +8,8 @@
                 
                 <div class="row">
                     <div class="col-sm-8" >
-                        <a href="/admin/add-game" class="btn btn-primary" ><i class="fas fa-plus-circle"></i> <span>Add New Game</span></a>						
+                        <a href="/admin/add-game" class="btn btn-primary" ><i class="fas fa-plus-circle"></i> <span>Add New Game</span></a>
+                        <a href="/admin/show-list-image" class="btn btn-primary" ><i class="fas fa-plus-circle"></i> <span>Show List Img Game</span></a>				
                     </div>
                     <div class="col-sm-4">
                         <form class="form-inline" method="GET" action="/game/search">
@@ -75,6 +76,7 @@
 
 <script>
     const stateMsg = JSON.parse('<%- JSON.stringify(success) %>');
+    
     let success = (stateMsg) ? stateMsg : '';
 
     if(success) {
